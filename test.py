@@ -56,3 +56,11 @@ print a4
 
 ab = [1, 2, 3]
 print(len(ab), range(len(ab)))
+
+cb = []
+print cb
+cb.append(0)
+print cb
+value = 20
+for i in range(1, 20 +1 ):
+    print i
