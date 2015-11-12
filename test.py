@@ -1,8 +1,10 @@
 __author__ = 'reidarkl'
 
 from collections import deque
+import numpy as np
 from sys import *
 
+"""
 stack = [1, 2, 3, 4, 5]
 
 for i in stack:
@@ -25,13 +27,7 @@ que = deque(b)
 print(que.popleft())
 print(qu.popleft())
 
-b = ["hei", "på", "bok"]
-for i in b:
-    for j in i:
-        print(j)
 
-if "hei" in b:
-    print("jepp")
 
 c = 3
 print(c/2)
@@ -49,3 +45,14 @@ for i in asd:
     print(i)
 for i in asb:
     print(i)
+
+a1 = np.arange(9).reshape(3, 3)
+a2 = np.arange(3)
+a3 = np.multiply(a1, a2)
+print(a3)
+a4 = a1.dot(a2)
+print a4
+"""
+
+ab = [1, 2, 3]
+print(len(ab), range(len(ab)))
