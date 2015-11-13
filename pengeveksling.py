@@ -1,6 +1,7 @@
 __author__ = 'reidarkl'
 
 from sys import stdin, maxint
+import time
 
 
 def minCoinsGreedy(coins, value):
@@ -11,6 +12,7 @@ def minCoinsGreedy(coins, value):
             tempV += c
             coin += 1
     return coin
+
 
 def minCoinsDynamic(coins, value):
     if value in coins:
@@ -26,20 +28,20 @@ def minCoinsDynamic(coins, value):
     return c.pop()
 
 
-
 def canUseGreedy(coins):
-    # bare returner False her hvis du ikke klarer aa finne ut
-    # hva som er kriteriet for at den graadige algoritmen skal fungere
-    # SKRIV DIN KODE HER
-    pass
+    for i in range(len(coins) - 1):
+        if coins[i] % coins[i + 1] != 0:
+            return False
+    return True
 
+start = time.time()
 Inf = 1000000000
 coins = []
 for c in stdin.readline().split():
     coins.append(int(c))
 coins.sort()
 coins.reverse()  # stor -> lav sortering
-print coins
+# print coins
 method = stdin.readline().strip()
 if method == "graadig" or (method == "velg" and canUseGreedy(coins)):
     for line in stdin:
@@ -47,3 +49,4 @@ if method == "graadig" or (method == "velg" and canUseGreedy(coins)):
 else:
     for line in stdin:
         print minCoinsDynamic(coins, int(line))
+# print (time.time() - start)
